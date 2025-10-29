@@ -7,49 +7,106 @@
         <title>Baztami Wallet</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
 
     </head>
-    <body class="bg-gray-900">
-        <header class="bg-amber-700 flex justify-between  hover:bg-amber-950 duration-1000">
+    <body class="bg-gray-800">
+        <header class="bg-stone-600 flex justify-between  hover:bg-stone-500 duration-1000">
             <div class=" flex items-center gap-7 pl-12 pt-6 pb-7 ">
                 <img  class="size-20 cursor-pointer hidden sm:block duration-1000" src="./images/baztami.png" alt="">
                 <div class="block gap-4">
-                    <h1 style="font-family: 'Pacifico', cursive;" class="text-2xl  text-yellow-200 
+                    <h1 style="font-family: 'Pacifico', cursive;" class="text-1xl  text-yellow-200 
                             hover:text-white hover:scale-95 duration-1000 cursor-pointer 
                             sm:text-3xl">BazTami Wallet</h1>
-                    <p style="font-family: 'dancing', cursive;" class="text-white hidden sm:block duration-1000">Manage your budget, Growth your wealth</p>
+                    <p style="font-family: 'dancing', cursive;" class="text-white hidden sm:block duration-1000"
+                    >Manage your budget, Growth your wealth</p>
                 </div>
             </div>
             <div class="flex items-center "> 
-                <div class="group flex items-center cursor-pointer bg-gray-900 
-                            sm:pl-8 sm:pr-8 sm:pt-3 sm:pb-3 rounded-full hover:bg-amber-700 
+                <div class="group flex items-center justify-center cursor-pointer bg-gray-900 
+                            sm:pl-8 sm:pr-8 sm:pt-3 sm:pb-3 rounded-full 
                             pl-4 pr-4 pt-1 pb-1 mr-2
-                            hover:shadow-yellow-200/50 hover:shadow-sm duration-1000">
+                            hover:shadow-yellow-200/50 hover:shadow-sm duration-500">
+                    <p class="text-xs block text-white 
+                              duration-500 ">Moussa Mohammed <span><i class="fa-solid fa-user text-white  duration-1000"></i></span></p>
 
-                    <p class="hidden text-2xl sm:block text-white 
-                             group-hover:text-black duration-1000 ">Actual Balance :</p>
-                    <p class=" text-white text-sm sm:text-3xl sm:pl-10  pl:4
-                            group-hover:text-black duration-1000">3056 MAD</p>
                 </div>
             </div>
             
         </header> 
-        <section>
+        <div>
             <div>
                 <div class="flex justify-between p-6">
                     <div>
-                        <h2 class="text-2xl text-white">Hi there !👋</h2>
-
+                        <h2 style="font-family: 'dancing', cursive;"  class="sm:text-3xl text-white font-medium text-2xl">Hi there !</h2> 
+                        
                     </div>
-                    <button class="group text-white text-3xl pl-6 pr-6 pt-3 cursor-pointer
-                                    pb-4 bg-amber-700 rounded-full hover:text-black
-                                    hover:bg-amber-300 duration-1000 ">
+                    <button id="addTransaction" class="group text-white text-xl sm:text-xl pl-4 pr-4 pt-2 sm:flex 
+                                    items-center justify-center cursor-pointer
+                                    pb-3 bg-amber-700 rounded-full hover:text-black
+                                    hover:bg-amber-300 duration-100">
                                     <div class="flex"> 
                                         <p class="hidden sm:block group-hover:text-black duration-1000 z-50">
                                         Manage your wealth</p>+</div></button>
+                    
                 </div>
+            
+            <p class="text-white p-6 sm:text-3xl">Welcome to your personal wallet,<span style="font-family: 'Pacifico', cursive;" class="text-blue-600 font-bold cursor-pointer">Everything</span>  is up to date by one <span style="font-family: 'Pacifico', cursive;color: yellow;">click</span></p>
             </div>
-        </section>
+            
+        </div>
+        <section class=" hidden p-9 flex justify-center items-center">
+            <div class="bg-red-100 rounded-3xl h-96 w-96 h-auto  ">
+            <h4  class="font-arial-unicode text-center font-semibold text-white py-4 
+                        bg-zinc-700 rounded-t-3xl">Add a new transaction</h4>
+            <div class="sm:px-8 py-4 px-4">
+                <div>
+                    <h4 class="pb-2">Amount:</h4>
+                    <input  id="amount" type="number" placeholder="0000 MAD" class="sm:w-5/5  w-5/5 border-1 pl-2  
+                            outline-none rounded-sm border-red-800  text-black focus:border-blue-500 focus:shadow-xl hover:shadow-xl cursor-pointer 
+                            focus:shadow-blue-500/90 hover:shadow-blue-500/90" required>
+                </div>
+                <div class="sm:flex sm:flex-row sm:justify-between pt-6"> 
+                    
+                    <div class="">
+                        <h4 class="">Transaction type :</h4>
+                        <div class="sm:flex block  sm:pl-6">
+                            <div>
+                                <input name="transaction" type="radio"  id="expenses" class="accent-green-700" required>
+                                <label for="expenses">Expenses</label>
+                            </div>
+                            <div class="sm:pl-4">
+                                <input  name="transaction" type="radio"  id="income" class="accent-green-700">
+                                <label for="income">Income</label>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <textarea 
+                    id="description" 
+                    placeholder="Description"
+                    class="w-full min-h-[100px] p-3 border mt-4 border-zinc-900 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    ></textarea></div>
+            </div>
+        </section >
+        <div class="">
+            <p class=" text-white ml-7 font-bold sm:text-3xl text-2xl">Dashboard for this mounth:</p>
+        </div>
+        <div class="grid grid-cols-3 justify-around content-center p-3 mt-7 gap-2 border-1 m-2 border-white " >
+            <div class="bg-slate-500 rounded-md w-25 text-white">
+                <h2 class="text-center">Balance:</h2>
+                <span id="balance"> 3000</span><span> MAD</span>
+            </div>
+            <div class="bg-red-800 rounded-md text-white">
+                <h2 class="text-center">Expenses: <i class="fa-solid fa-minus"></i></h2>
+                <span id="expenses">-1266</span><span> MAD</span>
+            </div >
+            <div class="bg-green-700 rounded-md text-white ">
+                <h2 class="text-center">Income :<i class="fa-solid fa-plus "></i></h2>
+                <span id="income" class="text-xs">4266</span><span  class="text-xs"> MAD</span>
+            </div>
+        </div>
     </body>
 </html>
