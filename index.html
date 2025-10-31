@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-gray-900">
-    <div class="bg-stone-700 shadow-sm shadow-black hover:bg-stone-500">
+<body class="bg-gray-800">
+    <div class="bg-stone-700 shadow-lg shadow-black hover:bg-stone-500 duration-1000">
     <header 
         class=" flex justify-between   duration-1000 ">
         <div 
@@ -54,46 +54,48 @@
             class=" rounded-md w-auto  sm:w-60 flex flex-col items-center justify-center text-white
                 hover:scale-110  duration-500">
             <h2 
-                class="text-center uppercase font-semibold text-yellow-200">
+                class="text-center uppercase sm:text-xl font-semibold text-yellow-200">
                 Balance:
             </h2>
-            <p class="uppercase ">
+            <p class="uppercase sm:text-xl">
                 <span id="balance" class="text-green-500 font-bold uppercase">
-                    3000
+                    3078.54
                 </span>
-                <span class="text-green-500" >MAD
+                <span class="text-green-500 sm:text-xl" >MAD
                 </span>
             </p>
         </div>
         <div 
             class=" rounded-md w-auto  sm:w-60 flex flex-col items-center justify-center text-white
                 hover:scale-110  duration-500">
-            <h2 class="text-center uppercase font-semibold text-yellow-200">
+            <h2 class="text-center uppercase sm:text-xl font-semibold text-yellow-200">
                 Expenses: 
                 
             </h2>
-            <p><span 
+            <p><i 
+                    class="fa-solid fa-minus text-sm text-red-500 "></i>
+                <span 
                 id="expenses" 
-                class="text-red-500 font-semibold">
-                <i 
-                    class="fa-solid fa-minus text-sm text-red-500 "></i>1266</span><span class="text-red-500 font-semibold"> MAD</span></p>
+                class="text-red-500 font-semibold sm:text-xl">
+                1266</span><span class="text-red-500 font-semibold sm:text-xl"> MAD</span></p>
         </div>
         <div 
             class=" rounded-md w-auto sm:w-60 h-20 flex flex-col items-center justify-center text-white 
                 hover:scale-110  duration-500">
-            <h2 class="text-center uppercase font-semibold text-yellow-200">
+            <h2 class="text-center uppercase sm:text-xl font-semibold text-yellow-200">
                 Income :
             </h2>
-            <p><span id="income" class="text-xs text-green-500 font-semibold">
+            <p>
                 <i 
                     class="fa-solid fa-plus text-green-500">
                 </i>
-                4266</span><span class="text-xs text-green-500"> MAD</span></p>
+                <span id="income" class="text-xs text-green-500 font-semibold sm:text-xl">
+                
+                4266</span><span class="text-xs text-green-500 sm:text-xl font-semibold"> MAD</span></p>
         </div>
     </div>
     </div>
-    <div>
-        <div>
+        <div class="mt-4">
             <div class="flex justify-between p-6">
                 <div>
                     <h2 style="font-family: 'dancing', cursive;" 
@@ -108,7 +110,7 @@
                         hover:bg-amber-300 duration-100">
                     <div class="flex">
                         <p 
-                        class="hidden sm:block group-hover:text-black duration-1000 z-50">
+                        class="hidden sm:block group-hover:text-black duration-1000 ">
                             Manage your wealth
                         </p>+
                     </div>
@@ -133,15 +135,14 @@
             </p>
         </div>
 
-    </div>
     <section 
         id="transactionCard" 
-        class=" hidden fixed inset-0 justify-center  items-center bg-black bg-opacity-70 p-9 transition-opacity duration-1000 ">
-        <div 
-            class="bg-red-100 rounded-3xl h-auto w-96 ">
+        class="animation-popup  hidden inset-0 fixed justify-center  items-center bg-black/60 p-9 transition-opacity duration-1000  ">
+        <forum 
+            class="bg-red-100 rounded-3xl h-auto w-96 sm:w-3/5">
             <h4 
                 class="font-arial-unicode text-center font-semibold text-white py-4 
-                         bg-zinc-700 rounded-t-3xl">
+                         bg-stone-800 rounded-t-3xl">
                 Add a new transaction
             </h4>
             <div class="sm:px-8 py-4 px-4">
@@ -152,46 +153,60 @@
                              text-black focus:border-blue-500 focus:shadow-xl hover:shadow-xl cursor-pointer 
                             focus:shadow-blue-500/90 hover:shadow-blue-500/90" required>
                 </div>
+
                 <div 
-                    class="sm:flex sm:flex-row sm:justify-between pt-6">
+                    class=" block sm:flex sm:flex-row sm:justify-between pt-6">
 
                     <div class="">
                         <h4 class="">Transaction type :</h4>
                         <div 
                             class="sm:flex block  sm:pl-6">
                             <div>
-                                <input name="transaction" type="radio" id="expenses" class="accent-green-700" required>
+                                <input name="type" type="radio" id="expenses" value="Expenses" class="accent-green-700" required>
                                 <label for="expenses">Expenses</label>
                             </div>
                             <div class="sm:pl-4">
-                                <input name="transaction" type="radio" id="income" class="accent-green-700">
+                                <input name="type" type="radio" id="income" value="Income" class="accent-green-700">
                                 <label for="income">Income</label>
                             </div>
                         </div>
                     </div>
+                    <div class="pt-6 sm:pt-px ">
+                        <label class="pb-2">Date: <br></label>
+                        <input id="date" type="date" 
+                            class="sm:w-full border-1 pl-2 py-1 outline-none rounded-sm border-red-800 
+                                text-black focus:border-blue-500 focus:shadow-xl hover:shadow-xl cursor-pointer 
+                                focus:shadow-blue-500/90 hover:shadow-blue-500/90" required>
+                    </div>
                 </div>
-                <textarea 
+                <textarea
                 id="description" 
                 placeholder="Description" 
-                class="w-full min-h-[100px] p-3 border mt-4 border-zinc-900 rounded-lg resize focus:outline-none 
+                class="w-full min-h-[100px] p-3 border mt-4 border-zinc-900 rounded-lg resize-y focus:outline-none 
                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
                 <div 
-                    class="flex flex-row pl-40 py-4">
+                    class="flex flex-row  sm:gap-12 pl-40 sm:pl-100 py-4">
                     <button 
                         id="cancelTransaction"
-                        class=" font-semibold hover:bg-red-200 px-2 py-1 rounded-lg duration-300 cursor-pointer">Cancel</button>
+                        class=" font-semibold hover:bg-red-200 px-2 sm:px-5 py-1 rounded-lg duration-300 cursor-pointer">Cancel</button>
                     <button 
-                        id="saveTransaction"
-                        class=" bg-green-600 text-white px-4 ml-7 rounded-lg cursor-pointer hover:bg-green-700 duration-300">Save</button>
+                        id="save"
+                        class=" bg-green-600 text-white px-4 sm:px-7 ml-7 rounded-lg cursor-pointer
+                         hover:bg-green-700 duration-300">Save</button>
                 </div>
                 
              </div>
             
-        </div>
+        </forum>
     </section>
     
     <div class="history">
-        
+        <div class="p-6">
+            <h2 class="text-white text-2xl font-semibold mb-4 border-b-2 border-yellow-200 pb-3 border-opacity-20">Transaction History</h2>
+            <div id="transactionHistory" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Transaction history phase -->
+            </div>
+</div>
     </div>
     <script src="./main.js"></script>
 </body>
