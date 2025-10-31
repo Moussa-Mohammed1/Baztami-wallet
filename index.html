@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale= 1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <title>Baztami Wallet</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+     integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,11 +22,11 @@
             <img   
                 class="size-20 cursor-pointer hidden sm:block duration-1000 hover:scale-90 " src="./images/baztami.png" alt="">
             <div class="block gap-4">
-                <h1 style="font-family: 'Pacifico', cursive;" 
-                    class="text-lg  text-yellow-200 hover:text-white hover:scale-95 duration-1000 
+                <h1 
+                    class="pacifico text-lg  text-yellow-200 hover:text-white hover:scale-95 duration-1000 
                         cursor-pointer sm:text-3xl">BazTami Wallet</h1>
-                <p style="font-family: 'dancing', cursive;" 
-                    class="text-white hidden sm:block duration-1000">
+                <p  
+                    class=" dancing text-white hidden sm:block duration-1000">
                     Manage your budget, Growth your wealth
                 </p>
             </div>
@@ -98,8 +97,8 @@
         <div class="mt-4">
             <div class="flex justify-between p-6">
                 <div>
-                    <h2 style="font-family: 'dancing', cursive;" 
-                        class="sm:text-3xl text-white font-medium text-2xl">
+                    <h2  
+                        class="pacifico sm:text-3xl text-white font-medium text-2xl">
                         Hi there !
                     </h2>
 
@@ -137,10 +136,11 @@
 
     <section 
         id="transactionCard" 
-        class="animation-popup  hidden inset-0 fixed justify-center  items-center bg-black/60 p-9 transition-opacity duration-1000  ">
+        class="animation-popup z-50 hidden inset-0 fixed justify-center  items-center bg-black/60 p-9 transition-opacity duration-1000  ">
         <forum 
             class="bg-red-100 rounded-3xl h-auto w-96 sm:w-3/5">
             <h4 
+                id="forumTitle"
                 class="font-arial-unicode text-center font-semibold text-white py-4 
                          bg-stone-800 rounded-t-3xl">
                 Add a new transaction
@@ -149,9 +149,9 @@
                 <div>
                     <h4 class="pb-2">Amount:</h4>
                     <input id="amount" type="number" placeholder="0000 MAD" 
-                        class="sm:w-5/5  w-5/5 border-1 pl-2   outline-none rounded-sm border-red-800 
-                             text-black focus:border-blue-500 focus:shadow-xl hover:shadow-xl cursor-pointer 
-                            focus:shadow-blue-500/90 hover:shadow-blue-500/90" required>
+                            class="w-full border-1 pl-2 py-1 outline-none rounded-sm border-red-800 
+                                text-black focus:border-blue-500 focus:shadow-xl hover:shadow-xl cursor-pointer 
+                                focus:shadow-blue-500/90 hover:shadow-blue-500/90" required>
                 </div>
 
                 <div 
@@ -184,15 +184,14 @@
                 placeholder="Description" 
                 class="w-full min-h-[100px] p-3 border mt-4 border-zinc-900 rounded-lg resize-y focus:outline-none 
                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
-                <div 
-                    class="flex flex-row  sm:gap-12 pl-40 sm:pl-100 py-4">
+               <div 
+                    class="flex flex-row justify-end gap-4 py-4">
                     <button 
                         id="cancelTransaction"
-                        class=" font-semibold hover:bg-red-200 px-2 sm:px-5 py-1 rounded-lg duration-300 cursor-pointer">Cancel</button>
+                        class="font-semibold hover:bg-red-200 px-5 py-2 rounded-lg duration-300 cursor-pointer">Cancel</button>
                     <button 
                         id="save"
-                        class=" bg-green-600 text-white px-4 sm:px-7 ml-7 rounded-lg cursor-pointer
-                         hover:bg-green-700 duration-300">Save</button>
+                        class="bg-green-600 text-white px-7 py-2 rounded-lg cursor-pointer hover:bg-green-700 duration-300">Save</button>
                 </div>
                 
              </div>
