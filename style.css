@@ -6,3 +6,9 @@
     from {top :-300px; opacity: 0;}
     to {inset: 0; opacity: 1;}
 }
+.pacifico{
+    font-family: 'Pacifico', cursive;
+}
+.dancing{
+    font-family:  'dancing', cursive;
+}
